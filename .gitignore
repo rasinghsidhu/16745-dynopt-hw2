@@ -1,0 +1,10 @@
+*.o
+.*
+**/simulate
+**/animate
+**/simulatei
+**/learn
+walk/d*
+!walk/*.c
+!walk/*.dll
+
