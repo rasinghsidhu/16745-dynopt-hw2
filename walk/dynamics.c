@@ -602,6 +602,8 @@ void b1guforce( double t, double *q, double *u )
   compute_ground_force( foot[RIGHT], sim.foot_zero[RIGHT], footd[RIGHT],
 			sim.foot_offset, BODY_R_CALF, sim.ground_force[RIGHT] );
 
+
+
   // Apply horizontal perturbation to torso
   force[0] = sim.torso_perturbation;
   force[1] = 0.0;

@@ -27,13 +27,13 @@ init_default_parameters( SIM *s )
   /* Objective function */
   s->desired_speed = 1.0;
   s->clearance = 0.02;
-  s->speed_penalty_weight = 1e-3;
-  s->torque_penalty_weight = 1e-7;
+  s->speed_penalty_weight = 1e-1;
+  s->torque_penalty_weight = 0;
   s->clearance_penalty_weight = 1e1;
-  s->f_x_penalty_weight = 1e-6;
-  s->f_z_penalty_weight = 1e-6;
-  s->pitchd_penalty_weight = 1e-1;
-  s->crashed_penalty_weight = 1e2;
+  s->f_x_penalty_weight = 0;
+  s->f_z_penalty_weight = 0;
+  s->pitchd_penalty_weight = 0;
+  s->crashed_penalty_weight = 1e3;
   s->summed_score = 0.0;
   s->discount = 0.99954;
   s->discount_to_power = 1.0;
