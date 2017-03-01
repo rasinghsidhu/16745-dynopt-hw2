@@ -9,39 +9,13 @@
 
  N 33        # Problem dimension, overwrites parameter in cmaes_init
  initialX 33:   # Initial search point. Syntax: 1==read one number, see also end of file. 
-   .89      
-   -0.047
-   0.33
-   -0.37
-   -0.10
-   -0.43
-   0.29
-   0.26
-   -0.080
-   0.11
-   -0.14
-   -0.22
-   -0.031
-   0.28
-   0.085
-   0.41
-   -0.38
-   -0.046
-   -0.29
-   -0.36
-   -0.12
-   2000
-   100
-   2000
-   100
-   .2
-   .35
-   -0.3
-   0
-   .2
-   -0.1
-   -0.15
-   -0.01
+0.870852    -0.0787448      0.370879     -0.489826     -0.186589
+    -0.147806      0.300878      0.514014    -0.0713468     -0.524097
+     0.429056      -0.18929   -0.00514815       0.86769     0.0402945
+      0.69727     -0.630266     -0.104624     -0.205771      -0.48678
+    -0.108401       2001.17       99.4502       2000.18       101.309
+     0.203545      0.286474     -0.315492    0.00301007      0.175274
+    -0.116506     -0.176796    -0.0173741
  typicalX 33:   # Typical search point (useful for restarts, cave: boundaries), overwritten by 
     .89      
    -0.047
@@ -77,48 +51,20 @@
    -0.15
    -0.01
  initialStandardDeviations  33:   #  1==read only one number for all coordinates
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
-   .005
+   0.5    0.02      0.2     0.2      0.05
+    0.2      0.15      0.12    0.04      0.5
+     0.5     0.1    0.02      0.15      0.05
+     0.2     0.2    0.025     0.0274561     0.0354389
+    0.0109952       1       1       1       1
+     0.0206249      0.0361578     0.0296536    0.000321225      0.0183053
+    0.0108166     0.0154414    0.00173574
 ## --- OPTIONAL SETTINGS
 
 # stop-Parameters can be changed online via cmaes_signals.par
 
 stopMaxFunEvals   1e299     # max number of f-evaluations, 900*(N+3)*(N+3) is default
 # fac*maxFunEvals   1e0     # multiplies stopMaxFunEvals by read number, default is 1
-stopMaxIter       100     # max number of iterations (generations), inf is default
+stopMaxIter       50     # max number of iterations (generations), inf is default
 
 # stopFitness 1e-9   # stop if function value is smaller than stopFitness
                      # commented == never stop on function value (default)

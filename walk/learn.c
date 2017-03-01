@@ -27,22 +27,24 @@ double run_sim( SIM *sim )
   int forceEnabled = 0;
   for( i = 0; sim->time < sim->duration; i++ )
     {
-      controller( sim );
-      save_data( sim );
-      if ( sim->status == CRASHED )
-	       break;
-      integrate_one_time_step( sim );
       if(!forceEnabled){
         sim->torso_perturbation = 0;
-        double p = (double)rand()/RAND_MAX;
-        forceEnabled = p < .005;
-        timeEnd = sim->time + 2;
-        force = ((double)rand()/RAND_MAX - .5)*5;
+        double p = (double)rand()/(RAND_MAX/2);
+        forceEnabled = p < .00025;
+        timeEnd = sim->time + .4;
+        p = (double)rand()/(RAND_MAX/2);
+        force = ((p>.5)? 1 : -1)*25;
       }
       else{
         sim->torso_perturbation = force;
         forceEnabled = sim->time < timeEnd;
       }
+      controller( sim );
+      save_data( sim );
+      if ( sim->status == CRASHED )
+	       break;
+      integrate_one_time_step( sim );
+
     }
 
   // write_the_mrdplot_file( sim );
@@ -173,7 +175,7 @@ main( int argc, char **argv )
   double score, new_score;
 
   init_default_parameters( &sim );
-  sim.rand_scale = 10;
+  sim.rand_scale = 0;
   sim.torso_perturbation = 0;
   sim.controller_print = 1;
 
